@@ -1,0 +1,10 @@
+{
+  "name": "@obey/sandbox",
+  "scripts": {
+    "docker:up": "wenv IS_LOCAL_MODEL=true -f || envcmd -sni docker model run {{MODEL}}"
+  },
+  "devDependencies": {
+    "@b12k/obey": "workspace:*",
+    "@b12k/wenv": "0.1.0"
+  }
+}

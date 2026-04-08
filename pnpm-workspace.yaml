@@ -1,0 +1,4 @@
+packages:
+  - packages/obey
+  - packages/sandbox
+  - packages/configs

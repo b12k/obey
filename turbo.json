@@ -1,0 +1,54 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "bootstrap": {
+      "outputLogs": "new-only"
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev"],
+      "outputs": ["dist"],
+      "outputLogs": "new-only"
+    },
+    "dev": {
+      "persistent": true,
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "postdev": {
+      "cache": false
+    },
+    "check:lint": {
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "check:types": {
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "check:format": {
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "fix:lint": {
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "fix:format": {
+      "dependsOn": ["^build:dev"],
+      "outputLogs": "new-only"
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist"],
+      "outputLogs": "new-only"
+    },
+
+    "deps:check": {
+      "outputLogs": "new-only"
+    },
+    "deps:update": {
+      "outputLogs": "new-only"
+    }
+  }
+}

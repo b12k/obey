@@ -1,34 +1,35 @@
 {
-  "name": "obey",
+  "name": "@obey/monorepo",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx ./src/cli.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "turbo dev",
+    "postdev": "turbo postdev",
+    "check": "turbo check:types check:lint check:format",
+    "fix": "turbo fix:lint fix:format",
+    "build": "turbo build",
+    "build:dev": "turbo build:dev",
+    "release": "turbo release",
+    "deps:check": "turbo deps:check",
+    "deps:update": "turbo deps:update",
+    "prepare": "run-p prepare:*",
+    "prepare:husky": "husky",
+    "prepare:bootstrap": "turbo bootstrap",
+    "prepare:build": "pnpm build:dev",
+    "pkg:obey": "pnpm --filter @b12k/obey",
+    "pkg:sandbox": "pnpm --filter @obey/sandbox",
+    "pkg:configs": "pnpm --filter @obey/configs"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.30.0",
+  "author": "Bogdan Kolesnyk",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
   "devDependencies": {
-    "@rslib/core": "^0.19.6",
-    "@types/minimist": "^1.2.5",
-    "@types/node": "^25.3.3",
-    "@types/picomatch": "^4.0.2",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "cosmiconfig": "^9.0.0",
-    "es-toolkit": "^1.45.1",
-    "eta": "^4.5.1",
-    "glob": "^13.0.6",
-    "minimist": "^1.2.8",
-    "openai": "^6.25.0",
-    "picomatch": "^4.0.3",
-    "yargs": "^18.0.0",
-    "zod": "^4.3.6"
+    "husky": "9.1.7",
+    "npm-check-updates": "20.0.0",
+    "npm-run-all2": "8.0.4",
+    "turbo": "^2.9.4"
   }
 }

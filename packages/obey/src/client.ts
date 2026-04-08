@@ -20,7 +20,7 @@ export class Obeyer {
     return this;
   }
 
-  prompt(prompt: string) {
+  execPrompt(prompt: string) {
     const { client, model } = this;
     return client.completions.create({
       model,

@@ -3,10 +3,6 @@
 import { cosmiconfig } from "cosmiconfig";
 import minimist from "minimist";
 import { configSchema } from "./create-config";
-import type { Config } from "./create-config";
-import picomatch from "picomatch";
-import { renderPrompt } from "./prompts";
-import { Obeyer } from "./client";
 import { glob } from "glob";
 
 const { _: providedFiles, ...configArgs } = minimist(process.argv.slice(2));
