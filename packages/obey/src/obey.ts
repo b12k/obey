@@ -1,7 +1,7 @@
 import { OpenAI } from "openai";
 import type { Config } from "./create-config";
 
-export class Obeyer {
+export class Obey {
   private client: OpenAI;
   private model: string;
   constructor({ baseURL, apiKey, model }: Config) {
@@ -12,15 +12,21 @@ export class Obeyer {
     });
   }
 
+  private async checkFileExist(path: string) {}
+
   private async readFile(path: string) {
     return this;
   }
 
-  private async loadConventions() {
+  private async readConventions() {
     return this;
   }
 
-  execPrompt(prompt: string) {
+  private async readFiles() {
+    return this;
+  }
+
+  private prompt(prompt: string) {
     const { client, model } = this;
     return client.completions.create({
       model,
@@ -28,7 +34,7 @@ export class Obeyer {
     });
   }
 
-  checkFile(path: string) {
+  private checkFile(path: string) {
     return this;
   }
 }

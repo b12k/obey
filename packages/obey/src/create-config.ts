@@ -4,6 +4,7 @@ export const configSchema = z.object({
   baseURL: z.url(),
   apiKey: z.string(),
   model: z.string(),
+  systemPrompt: z.string(),
   filesConventions: z.record(z.string(), z.array(z.string())),
   ignore: z.array(z.string()),
   extensions: z.array(z.string()),
@@ -19,8 +20,9 @@ export type UserConfig = Pick<Config, RequiredProps> &
 
 export const defaultConfig: Partial<Config> = {
   apiKey: "",
+  systemPrompt: "SYSTEM.md",
   filesConventions: {
-    "*": ["./OBEY_CONVENTIONS.md"],
+    "*": ["./OBEY.md"],
   },
   ignore: ["node_modules/**", "vendors/**", "dist/**"],
   parallelReq: 1,
