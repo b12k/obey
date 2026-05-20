@@ -4,6 +4,8 @@
 
 # OBEY - Code Naming Conventions
 
+[![skills.sh](https://skills.sh/b/b12k/obey)](https://skills.sh/b12k/obey)
+
 > "There are only two hard things in Computer Science: cache invalidation and naming things."
 >
 > — Phil Karlton, as quoted by David Karlton in [Naming things is hard](https://www.karlton.org/2017/12/naming-things-hard/)
@@ -174,5 +176,3 @@ It works well as a team reference for pull requests, refactors, new codebases, a
 The goal is simple: names should be short enough to use, specific enough to trust, and consistent enough to search.
 
 Good names are not decoration. They are part of the design.
-
-Movie credit: *They Live* (1988), directed by John Carpenter.
